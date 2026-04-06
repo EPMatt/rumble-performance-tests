@@ -1,12 +1,10 @@
 package helper;
 
 import net.sf.saxon.s9api.*;
-import org.apache.spark.api.java.JavaRDD;
 import org.rumbledb.api.Item;
 import org.rumbledb.api.Rumble;
 import org.rumbledb.api.SequenceOfItems;
 import org.rumbledb.config.RumbleRuntimeConfiguration;
-import sparksoniq.spark.SparkSessionManager;
 
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -40,12 +38,7 @@ public class Helper {
             List<Item> items = new ArrayList<>();
             System.out.println("Testing: " + query);
             SequenceOfItems result = rumble.runQuery(query);
-            if (!result.availableAsRDD()) {
-                result.populateList(items);
-            } else {
-                JavaRDD<Item> rdd = result.getAsRDD();
-                SparkSessionManager.collectRDDwithLimitWarningOnly(rdd, items);
-            }
+            result.populateList(items, 1000000000);
             System.out.println("Result is" + items.stream().map(Item::serialize).collect(Collectors.toList()));
             long totalTime = System.currentTimeMillis() - startTime;
             return totalTime;
