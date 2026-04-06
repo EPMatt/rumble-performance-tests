@@ -12,8 +12,8 @@ chmod +x ./copy_files_protocols.sh
 ./copy_files_protocols.sh
 cd ..
 
-chmod +x ./copy_files_edgars.sh
-./copy_files_edgars.sh
+chmod +x ./copy_files_edgar.sh
+./copy_files_edgar.sh
 cd ..
 ````
 
@@ -27,10 +27,16 @@ git clone http://gitlab.inf.ethz.ch/gfourny/rumble.git
 ```
 chmod +x ./run_pagination.sh
 chmod +x ./run_steps.sh
-chmod +x ./run_steps_impact.sh
 chmod +x ./run_all_tests.sh
 ./run_all_tests.sh
 ````
+
+`run_all_tests.sh` benchmarks both branches (`report/ma/master-without-matteo-work` and
+`report/ma/matteo-all-changes`) and each benchmark now executes twice:
+- once with default language `jsoniq`
+- once with default language `xquery31`
+
+Output logs include a `queryLanguage` field and language-specific output file names, so JSONiq and XQuery runs are kept separate.
 
 ## Evaluate results
 Run python script that plots the results (needs pandas, numpy and matplotlib installed)
