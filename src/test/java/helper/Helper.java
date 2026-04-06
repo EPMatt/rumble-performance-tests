@@ -43,7 +43,8 @@ public class Helper {
             long totalTime = System.currentTimeMillis() - startTime;
             return totalTime;
         } catch (OutOfMemoryError | Exception e) {
-            System.out.println(e);
+            System.out.println("Error: " + e.getMessage());
+            e.printStackTrace();
             return -1;
         }
     }
