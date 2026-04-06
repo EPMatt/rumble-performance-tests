@@ -18,10 +18,9 @@ echo "----------------------------------------"
 cd rumble/
 echo "Checking out branch: report/ma/master-without-matteo-work"
 git checkout report/ma/master-without-matteo-work
-echo "Building rumble jar (master-without-matteo-work branch)"
+echo "Building rumble jar"
 mvn clean compile assembly:single
 cd ..
-
 echo "Running pagination test suite"
 mvn test -Dtest=TestPagination#all
 
