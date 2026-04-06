@@ -1,23 +1,15 @@
 cd rumble/
-git checkout mschoeb-master2
+git checkout report/ma/matteo-all-changes
 git pull
 mvn clean compile assembly:single
 cd ..
 
-mvn test -Dtest=TestPagination#testMaster2
+mvn test -Dtest=TestPagination#all
 
 cd rumble/
-git checkout mschoeb-master1
+git checkout report/ma/master-without-matteo-work
 git pull
 mvn clean compile assembly:single
 cd ..
 
-mvn test -Dtest=TestPagination#testMaster1
-
-cd rumble/
-git checkout old-master
-git pull
-mvn clean compile assembly:single
-cd ..
-
-mvn test -Dtest=TestPagination#testOldMaster
+mvn test -Dtest=TestPagination#all

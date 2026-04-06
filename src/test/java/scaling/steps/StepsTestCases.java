@@ -12,6 +12,13 @@ public class StepsTestCases {
                 "xml-files(\"./data/protocols4k/*.xml\")/TEI/text/body/p[2]",
                 "xml-files(\"./data/protocols8k/*.xml\")/TEI/text/body/p[2]",
                 "xml-files(\"./data/protocols16k/*.xml\")/TEI/text/body/p[2]"
+            ),
+            List.of(
+                "xml-files(\"./data/protocols1k/*.xml\")/TEI/text/body/p[2]",
+                "xml-files(\"./data/protocols2k/*.xml\")/TEI/text/body/p[2]",
+                "xml-files(\"./data/protocols4k/*.xml\")/TEI/text/body/p[2]",
+                "xml-files(\"./data/protocols8k/*.xml\")/TEI/text/body/p[2]",
+                "xml-files(\"./data/protocols16k/*.xml\")/TEI/text/body/p[2]"
             )
     );
 
@@ -34,7 +41,13 @@ public class StepsTestCases {
                 "xml-files(\"./data/protocols4k/*.xml\")/descendant::date",
                 "xml-files(\"./data/protocols8k/*.xml\")/descendant::date",
                 "xml-files(\"./data/protocols16k/*.xml\")/descendant::date"
-
+            ),
+            List.of(
+                "xml-files(\"./data/protocols1k/*.xml\")/descendant::date",
+                "xml-files(\"./data/protocols2k/*.xml\")/descendant::date",
+                "xml-files(\"./data/protocols4k/*.xml\")/descendant::date",
+                "xml-files(\"./data/protocols8k/*.xml\")/descendant::date",
+                "xml-files(\"./data/protocols16k/*.xml\")/descendant::date"
             )
     );
 
@@ -51,6 +64,12 @@ public class StepsTestCases {
 
     public static TestCase steps_edgar1r = new TestCase(
             "steps_edgar1",
+            List.of(
+                "xml-files(\"./data/edgar16/*.xml\")/xbrl/context/entity/identifier",
+                "xml-files(\"./data/edgar64/*.xml\")/xbrl/context/entity/identifier",
+                "xml-files(\"./data/edgar256/*.xml\")/xbrl/context/entity/identifier",
+                "xml-files(\"./data/edgar1024/*.xml\")/xbrl/context/entity/identifier"
+            ),
             List.of(
                 "xml-files(\"./data/edgar16/*.xml\")/xbrl/context/entity/identifier",
                 "xml-files(\"./data/edgar64/*.xml\")/xbrl/context/entity/identifier",
@@ -76,6 +95,12 @@ public class StepsTestCases {
                 "xml-files(\"./data/edgar64/*.xml\")/descendant::segment",
                 "xml-files(\"./data/edgar256/*.xml\")/descendant::segment",
                 "xml-files(\"./data/edgar1024/*.xml\")/descendant::segment"
+            ),
+            List.of(
+                "xml-files(\"./data/edgar16/*.xml\")/descendant::segment",
+                "xml-files(\"./data/edgar64/*.xml\")/descendant::segment",
+                "xml-files(\"./data/edgar256/*.xml\")/descendant::segment",
+                "xml-files(\"./data/edgar1024/*.xml\")/descendant::segment"
             )
     );
 
@@ -91,6 +116,13 @@ public class StepsTestCases {
 
     public static TestCase steps_rumble_improvements = new TestCase(
             "steps_improvements",
+            List.of(
+                "xml-files(\"./data/protocols1k/*.xml\")/TEI/text/body/p[2]",
+                "xml-files(\"./data/protocols2k/*.xml\")/TEI/text/body/p[2]",
+                "xml-files(\"./data/protocols4k/*.xml\")/TEI/text/body/p[2]",
+                "xml-files(\"./data/protocols8k/*.xml\")/TEI/text/body/p[2]",
+                "xml-files(\"./data/protocols16k/*.xml\")/TEI/text/body/p[2]"
+            ),
             List.of(
                 "xml-files(\"./data/protocols1k/*.xml\")/TEI/text/body/p[2]",
                 "xml-files(\"./data/protocols2k/*.xml\")/TEI/text/body/p[2]",

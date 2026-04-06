@@ -14,16 +14,17 @@ public class ExecutionTimer {
     public static void main(String[] args) {
         String testName = args[0];
         String runtimeConfig = args[1];
-        String query = args[2];
-        int rep = Integer.parseInt(args[3]);
-        int queryIndex = Integer.parseInt(args[4]);
-        long estimatedInitTime = Long.parseLong(args[5]);
-        String outputName = args[6];
+        String queryLanguage = args[2];
+        String query = args[3];
+        int rep = Integer.parseInt(args[4]);
+        int queryIndex = Integer.parseInt(args[5]);
+        long estimatedInitTime = Long.parseLong(args[6]);
+        String outputName = args[7];
         long result;
 
         try {
             if (RuntimeConfig.lookup(runtimeConfig).useRumble) {
-                result = Helper.timeQueryRumble(query, null, runtimeConfig);
+                result = Helper.timeQueryRumble(query, null, runtimeConfig, queryLanguage);
             } else {
                 result = Helper.timeQuerySaxon(query, null);
             }
@@ -34,6 +35,7 @@ public class ExecutionTimer {
         JSONObject queryResults = new JSONObject();
         queryResults.put("testName", testName);
         queryResults.put("configName", runtimeConfig);
+        queryResults.put("queryLanguage", queryLanguage);
         queryResults.put("query", query);
         queryResults.put("runtime", result);
         queryResults.put("run", rep);

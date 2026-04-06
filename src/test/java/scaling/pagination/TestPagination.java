@@ -7,18 +7,9 @@ import scaling.ScalingTest;
 public class TestPagination extends ScalingTest {
 
     @Test
-    public void testMaster2() {
-        runTest(PaginationTestCases.allTestCases, "final_master");
-    }
-
-    @Test
-    public void testMaster1() {
-        runTest(PaginationTestCases.allTestCases, "new_master");
-    }
-
-    @Test
-    public void testOldMaster() {
-        runTest(PaginationTestCases.allTestCases, "old_master");
+    public void all() {
+        runTest(PaginationTestCases.allTestCases, "rumble", JSONIQ_LANGUAGE);
+        runTest(PaginationTestCases.allTestCases, "rumble", XQUERY_LANGUAGE);
     }
 
     @Override

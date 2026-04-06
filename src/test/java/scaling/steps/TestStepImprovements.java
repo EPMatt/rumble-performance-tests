@@ -7,15 +7,15 @@ public class TestStepImprovements extends ScalingTest {
 
     @Test
     public void testMaster2() {
-        runTest(StepsTestCases.stepImprovementCases, "opt_instanceof");
-        runTest(StepsTestCases.stepImprovementCases, "opt_instanceof_parent");
-        runTest(StepsTestCases.stepImprovementCases, "opt_instanceof_parent_steps");
-        runTest(StepsTestCases.stepImprovementCases, "rumble_experimental");
+        runTest(StepsTestCases.stepImprovementCases, "opt_instanceof", JSONIQ_LANGUAGE);
+        runTest(StepsTestCases.stepImprovementCases, "opt_instanceof_parent", JSONIQ_LANGUAGE);
+        runTest(StepsTestCases.stepImprovementCases, "opt_instanceof_parent_steps", JSONIQ_LANGUAGE);
+        runTest(StepsTestCases.stepImprovementCases, "rumble_experimental", JSONIQ_LANGUAGE);
     }
 
     @Test
     public void testMaster1() {
-        runTest(StepsTestCases.stepImprovementCases, "first_implementation");
+        runTest(StepsTestCases.stepImprovementCases, "first_implementation", JSONIQ_LANGUAGE);
     }
 
     @Override

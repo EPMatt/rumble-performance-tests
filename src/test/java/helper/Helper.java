@@ -14,8 +14,10 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Helper {
-    public static Rumble getRumble(String runtimeConfig) {
+    public static Rumble getRumble(String runtimeConfig, String queryLanguage) {
         List<String> args = new ArrayList<>();
+        args.add("--default-language");
+        args.add(queryLanguage);
         args.add("--output-format");
         args.add("json");
         args.add("--materialization-cap");
@@ -29,11 +31,11 @@ public class Helper {
     }
 
 
-    public static long timeQueryRumble(String query, Rumble rumble, String runtimeConfig) {
+    public static long timeQueryRumble(String query, Rumble rumble, String runtimeConfig, String queryLanguage) {
         try {
             long startTime = System.currentTimeMillis();
             if (rumble == null) {
-                rumble = getRumble(runtimeConfig);
+                rumble = getRumble(runtimeConfig, queryLanguage);
             }
             List<Item> items = new ArrayList<>();
             System.out.println("Testing: " + query);
