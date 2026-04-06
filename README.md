@@ -1,5 +1,6 @@
 # Introduction
-This repo contains the codes used for my (Marco Schöb) master thesis to create the plots for the runtime analysis of my changes to rumbleDB.
+This repository contains the code I am using for runtime performance tests for my thesis (Matteo Agnoletto).
+It is based on the work of Marco Schob: https://github.com/RumbleDB/rumble-performance-tests
 
 # Steps to reproduce results
 ## Download and prepare data
